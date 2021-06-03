@@ -1,11 +1,12 @@
 import React from "react";
+import { Container } from '@material-ui/core';
 import Counter from "./components/Counter";
 
 function App() {
   return (
-    <div className="App">
+    <Container fixed>
       <Counter />
-    </div>
+    </Container>
   );
 }
 
