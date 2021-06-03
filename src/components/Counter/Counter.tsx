@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Container } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
+import { PlayArrow, Pause, RotateLeft} from '@material-ui/icons';
 import useSound from 'use-sound';
 
-import buttonClickSfx from '../assets/sounds/button-click.mp3';
-import tickSfx from '../assets/sounds/tick.mp3';
+import buttonClickSfx from '../../assets/sounds/button-click.mp3';
+import tickSfx from '../../assets/sounds/tick.mp3';
+import { StyledCard, StyledButton, StyledButtonContainer} from "./Counter.style";
 
 const Counter = () => {
     const [counter, setCounter] = useState(1500);
@@ -43,6 +45,8 @@ const Counter = () => {
     const padTime = (time: number) => {
         return String(time).length === 1 ? `0${time}` : `${time}`;
     };
+
+    
       
     const format = (time: number) => {
         const minutes = Math.floor(time / 60);
@@ -50,13 +54,39 @@ const Counter = () => {
         return `${minutes}:${padTime(seconds)}`;
       };
 
-    return(<Container maxWidth="sm">
-        <h1> Counter </h1>
-        <div>Countdown: {counter === 0 ? "Time over" : format(counter)}</div>
-        <button type="button" onClick={onClickStart}>Start</button>
-        <button type="button" onClick={onClickPause}>Pause</button>
-        <button type="button" onClick={onClickReset}>Reset</button>
-       </Container>);
+      const renderClock = () => {
+          return(<Typography variant="h2" component="h2" align="center">
+        Countdown: {counter === 0 ? "Time over" : format(counter)}
+        </Typography>)
+      }
+
+    return(<StyledCard  >
+        <div>{renderClock()}</div>
+        
+        <StyledButtonContainer>
+        <StyledButton
+        variant="contained"
+        color="primary"
+        startIcon={<PlayArrow />}
+        onClick={onClickStart} >
+        Start
+      </StyledButton>
+      <StyledButton
+        variant="contained"
+        color="secondary"
+        startIcon={<Pause />}
+        onClick={onClickPause} >
+        Pause
+      </StyledButton>
+      <StyledButton
+        variant="contained"
+        color="default"
+        startIcon={<RotateLeft />}
+        onClick={onClickReset} >
+        Reset
+      </StyledButton>
+      </StyledButtonContainer>
+      </StyledCard >);
 }
 
 
