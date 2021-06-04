@@ -12,7 +12,6 @@ export const StyledCard = styled(Card)`
 
 export const StyledButton = styled(Button)`
         margin-right: 10px;
-
 `;
 
 export const StyledButtonContainer = styled.div`
