@@ -63,7 +63,6 @@ const Counter = () => {
 
     return(<StyledCard  >
         <div>{renderClock()}</div>
-        
         <StyledButtonContainer>
         <StyledButton
         variant="contained"
