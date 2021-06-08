@@ -1,7 +1,6 @@
 import { Button, Card } from '@material-ui/core';
 import styled from 'styled-components';
 
-
 export const StyledCard = styled(Card)`
         width: 500px;
         height: 200px;
