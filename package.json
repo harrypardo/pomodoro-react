@@ -66,9 +66,9 @@
     "prettier": "^2.3.0"
   },
   "lint-staged": {
-    "./**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write",
-      "yarn lint-staged"
+    "**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "yarn eslint",
+      "prettier --write"
     ]
   }
 }
