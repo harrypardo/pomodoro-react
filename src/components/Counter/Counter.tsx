@@ -72,6 +72,7 @@ const Counter = () => {
           color="primary"
           startIcon={<PlayArrow />}
           onClick={onClickStart}
+          disabled={isCounting}
         >
           Start
         </StyledButton>
@@ -80,6 +81,7 @@ const Counter = () => {
           color="secondary"
           startIcon={<Pause />}
           onClick={onClickPause}
+          disabled={!isCounting}
         >
           Pause
         </StyledButton>

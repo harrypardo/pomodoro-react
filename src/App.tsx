@@ -1,13 +1,8 @@
 import React from "react";
-import { Container } from "@material-ui/core";
-import Counter from "./components/Counter/Counter";
+import MainLayout from "./layouts/MainLayout";
 
 function App() {
-  return (
-    <Container fixed>
-      <Counter />
-    </Container>
-  );
+  return <MainLayout />;
 }
 
 export default App;
