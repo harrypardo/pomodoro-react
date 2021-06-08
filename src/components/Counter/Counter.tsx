@@ -37,7 +37,6 @@ const Counter = () => {
       timer = setTimeout(() => setCounter((c) => c - 1), 1000);
       playTickSFX();
     }
-
     return () => {
       if (timer) {
         clearTimeout(timer);
